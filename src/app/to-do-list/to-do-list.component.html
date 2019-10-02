@@ -1,0 +1,22 @@
+
+<router-outlet></router-outlet>
+<div>
+<nav class="navbar sticky-top navbar-dark bg-dark justify-content-between ">
+    <p class="logo" >To Do List</p>
+    <form #fo="ngForm" class="form-inline" (ngSubmit)="addNewCard(fo,$event);">
+            <input  class= "form-control mr-sm-2"type="text" ngModel name = "cartTitle" placeholder="title">
+            <input  class= " form-control mr-sm-2" ngModel type="text"  name ="cartBody"style=" padding: 20px 10px; line-height: 28px;" placeholder="body">
+            <button class=" btn btn-outline-success my-2 my-sm-0" type="submit">add</button>
+            <button><i class="fa fa-sign-out p-l-10 p-r-10 p-t-10 p-b-10"  style="color :aliceblue;"aria-hidden="true" (click)="logOut()"></i></button>
+        </form>
+    </nav>
+<div class="container-login100"  style="background-image: url('../../assets/images/bg-01.jpg'); ">
+    <div  *ngFor="let cart of _toDoList" class="container">
+        <div class="card p-l-10 p-r-10 p-t-10 p-b-10">
+            <h6><b>{{cart.cartTitle}}</b> </h6>
+            <span>{{cart.cartDate |date}}</span>
+            <p>{{cart.cartBody}}</p>
+        </div>
+      </div> 
+</div>
+</div>
