@@ -7,7 +7,7 @@ import {ToDoCart,User} from  '../interfaces/interface'
   providedIn: 'root'
 })
 export class DataService {
-url="https://still-sea-33524.herokuapp.com"
+url="https://still-sea-33524.herokuapp.com/"
   constructor(private http: HttpClient) { }
 
   getUserCarts(data,token) : Observable<ToDoCart[]> {
